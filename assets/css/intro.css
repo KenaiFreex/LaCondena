@@ -1,0 +1,112 @@
+/* Intro */
+#intro {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Change to relative */
+  cursor: default;
+  text-align: center;
+  z-index: 100004;
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  margin-bottom: 5%;
+  overflow: hidden; /* Prevent content overflow */
+  transition: margin-top 0.3s ease;
+  
+}
+
+#intro * {
+  color: #fff; /* Applies to all children */
+}
+
+#intro a {
+  border-bottom: rgba(255, 255, 255, 0.5);
+  color: transparent; /* Default color */
+}
+
+#intro a:hover {
+  border-bottom: none;
+  color: #18bfef !important;
+}
+
+#intro h1 { 
+  font-size: 5rem; 
+  line-height: 1; 
+}
+
+#intro p { 
+  font-size: 1.25rem; 
+  font-style: italic; 
+  margin-top: -0.25rem; 
+  text-align: center; 
+}
+
+#intro.hidden {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+
+body.is-preload #intro { 
+  opacity: 0; 
+  transform: translateY(2rem); 
+}
+
+.break {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Additional centering for horizontal alignment */
+}
+
+.break h1 {
+  background-image: none;
+  object-fit: contain;
+  padding-right: 1.5rem;
+}
+
+.break h1 img {
+  padding-top: 14%;
+  max-width: 100%; /* Adjust for specific width if needed on mobile */
+  margin: auto;
+  padding: 5rem;
+  
+}
+
+.glitch {
+  position: relative;
+  animation: inconsistent-shake 6000ms infinite;
+}
+.glitch::before, .glitch::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  mix-blend-mode: multiply;
+}
+.glitch::before {
+  transform: translate(0.05em, 0);
+  background-color: rgba(255, 0, 0, 0.75);
+  clip: rect(2px, 9999px, 7px, 0);
+}
+.glitch::after {
+  transform: translate(-0.025em, -0.05em);
+  background-color: rgba(0, 255, 0, 0.75);
+  clip: rect(8px, 9999px, 14px, 0);
+}
+
+
+@keyframes inconsistent-shake {
+  0%, 50%, 100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  25%, 75% {
+    transform: scale(1.1);
+    filter: blur(1px);
+  }
+}

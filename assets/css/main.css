@@ -519,3 +519,83 @@ input, select, textarea {
 
 		}
 
+
+/* Barra superior */
+.top-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+	height: 7vh;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar p{
+	margin-top: 30px;
+}
+/* Estilo del enlace */
+.icon-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.icon-link .service-name {
+    color: #bbb; /* Tono más oscuro para diferenciar el texto */
+}
+
+.icon-link:hover {
+    text-decoration: underline;
+}
+
+/* Separador */
+.separator {
+    margin: 0 8px;
+    color: white;
+    display: inline;
+}
+
+.top-bar-mobile{
+	display: none;
+}
+
+/* Ajuste de la barra para pantallas pequeñas */
+@media (max-width: 480px) {
+    .top-bar {
+        flex-direction: column; /* Coloca "Boletos" y enlaces en columna */
+        padding: 10px;
+		height: 20vh;
+		display: none;
+    }
+
+
+	.top-bar-mobile{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100vw;
+		height: 7vh;
+		background-color: #333;
+		color: white;
+		text-align: center;
+		font-size: 18px;
+		z-index: 1000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+	}
+
+	.top-bar-mobile p{
+		margin-top: 30px;
+	}
+}
+
+
